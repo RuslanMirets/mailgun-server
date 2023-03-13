@@ -12,4 +12,9 @@ export class UserController {
 	async getProfile(@CurrentUser("id") id: number) {
 		return this.userService.findOneById(id);
 	}
+
+	@Get()
+	async findAll() {
+		return this.userService.findAll();
+	}
 }

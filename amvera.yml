@@ -1,11 +1,12 @@
 meta:
-  environment: jvm
+  environment: node
   toolchain:
-    name: maven
-    version: 17
+    name: npm
+    version: 18
 
 build:
-  args: -Dserver.port=80 -Pproduction
+  additionalCommands: npm run build
 
 run:
-  jarName: bag-end.jar
+  command: npm run start
+  containerPort: 5000
